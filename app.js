@@ -7,10 +7,11 @@ var logger = require("morgan");
 var hbs = require('hbs')
 
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var authRouter = require("./routes/auth");
-var collectionRouter = require("./routes/collection");
+var indexRouter = require("./routes/index.routes");
+var usersRouter = require("./routes/users.routes");
+var authRouter = require("./routes/auth.routes");
+var collectionRouter = require("./routes/collection.routes");
+var cardRouter = require('./routes/card.routes')
 
 var app = express();
 
@@ -29,7 +30,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/collection", collectionRouter);
-//app.use("/card", require('./routes/card))
+app.use("/card", cardRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
