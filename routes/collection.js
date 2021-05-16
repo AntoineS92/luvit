@@ -22,7 +22,8 @@ router.get("/add-collection", (req, res, next) => {
 
 //GET Update
 router.get("/update-collection/:id", (req, res, next) => {
-  collectionModel.findById(req.params.id).populate("quelquechose")
+  collectionModel.findById(req.params.id)
+  //.populate("quelquechose")
     .then((result) =>
       res.render("collection/update-collection", { unOuDesModel: result })
     )
@@ -39,19 +40,19 @@ router.get("/collection/:id", (req, res, next) => {
 //GET Delete
 router.get("/delete/:id", (req, res, next) => {
   collectionModel.findByIdAndRemove(req.params.id)
-    .then(() => res.redirect("/dashboard/collection"))
+    .then(() => res.redirect("/collection"))
     .catch(next);
 });
 //POST CREATE
 router.post("/create", (req, res, next) => {
   collectionModel.create(req.body)
-    .then(() => res.redirect("/dashboard/collection"))
+    .then(() => res.redirect("/collection"))
     .catch(next);
 });
 //POST Update
 router.post("/update/:id", (req, res, next) => {
   collectionModel.findByIdAndUpdate(req.params.id, req.body)
-    .then(() => res.redirect("/dashboard/collection"))
+    .then(() => res.redirect("/collection"))
     .catch(next);
 });
 
