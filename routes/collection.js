@@ -1,7 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 //models en veux-tu en voilà
-const unModel = require("/unmodel");
+//const unModel = require("/unmodel");
 
 //CRUD
 
@@ -11,10 +11,11 @@ router.get("/collection", (req, res, next) => {
     .then(() => res.render("collection"))
     .catch(next);
 });
+
 // GET CREATE
 router.get("/add-collection", (req, res, next) => {
   unOuDesModel.find()
-    .then((result) => res.render("collection", { newCollection: result }))
+    .then((result) => res.render("collection/add-collection", { newCollection: result }))
     .catch(next);
 });
 
@@ -22,7 +23,7 @@ router.get("/add-collection", (req, res, next) => {
 router.get("/update-collection/:id", (req, res, next) => {
   unOuDesModel.findById(req.params.id).populate("quelquechose")
     .then((result) =>
-      res.render("dashboard/collection", { unOuDesModel: result })
+      res.render("collection/update-collection", { unOuDesModel: result })
     )
     .catch(next);
 });
