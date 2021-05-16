@@ -1,0 +1,4 @@
+.body{
+    background: linear-gradient(0deg, rgba(4, 0, 28, 0.89), rgba(4, 0, 28, 0.89)), url("./../images/jungle.jpeg");
+    background-size: cover;   
+}
