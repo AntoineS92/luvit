@@ -1,60 +1,63 @@
 const express = require("express");
 const router = new express.Router();
-//models en veux-tu en voilà
-const collectionModel= require("../models/model.collection");
+const CollectionModel = require("../models/model.collection");
+const CardModel = require("../models/model.card");
 
 //CRUD
 
 //GET ALL
 router.get("/", (req, res, next) => {
-  collectionModel.find()
-  //.populate("quelquechose")
-    .then((result) => res.render("collection", {collection : result}))
+  CollectionModel.find()
+    .populate("card")
+    .then((result) => res.render("collection", { collection: result }))
     .catch(next);
 });
 
 // GET CREATE
 router.get("/add-collection", (req, res, next) => {
-  collectionModel.find()
-    .then((result) => res.render("collection/add-collection", { newCollection: result }))
+  CollectionModel.find()
+    .then((result) =>
+      res.render("collection/add-collection", { newCollection: result })
+    )
     .catch(next);
 });
 
 //GET Update
 router.get("/update-collection/:id", (req, res, next) => {
-  collectionModel.findById(req.params.id)
-  //.populate("quelquechose")
+  CollectionModel.findById(req.params.id)
+    .populate("card")
     .then((result) =>
-      res.render("collection/update-collection", { unOuDesModel: result })
+      res.render("collection/update-collection", { updateCollection: result })
     )
     .catch(next);
 });
 
-//GET One Card
+//GET One Collection
 router.get("/collection/:id", (req, res, next) => {
-  collectionModel.findById(req.params.id)
-    .then((card) => res.render("collection/Onecard", { OneCardDetail: card }))
+  CollectionModel.findById(req.params.id)
+    .then((result) =>
+      res.render("collection/Onecollection", { OneCollectionDetail: result })
+    )
     .catch(next);
 });
 
 //GET Delete
 router.get("/delete/:id", (req, res, next) => {
-  collectionModel.findByIdAndRemove(req.params.id)
+  CollectionModel.findByIdAndRemove(req.params.id)
     .then(() => res.redirect("/collection"))
     .catch(next);
 });
 //POST CREATE
 router.post("/create", (req, res, next) => {
-  collectionModel.create(req.body)
+  CollectionModel.create(req.body)
     .then(() => res.redirect("/collection"))
     .catch(next);
 });
 //POST Update
 router.post("/update/:id", (req, res, next) => {
-  collectionModel.findByIdAndUpdate(req.params.id, req.body)
+  CollectionModel.findByIdAndUpdate(req.params.id, req.body)
     .then(() => res.redirect("/collection"))
     .catch(next);
 });
-
 
 module.exports = router;
