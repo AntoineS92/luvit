@@ -7,6 +7,7 @@ const CardSchema = new Schema(
     image: String,
     description: String,
     links:[String],
+    // add ref to collection
   },
   {
     timestamps: true,
