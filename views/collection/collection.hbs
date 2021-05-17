@@ -6,12 +6,12 @@
 
     {{#each collection}}
       <div class="collectioncard">
-        <a href="/update-collection/:id" class="link"><img
+        <a href="collection/update-collection/{{this._id}}" class="link"><img
             class="icon"
             src="images/edit.svg"
             alt=""
           /></a>
-        <a href="/delete/:id" class="link"><img
+        <a href="collection/delete/{{this._id}}" class="link"><img
             class="icon"
             src="images/trash.svg"
             alt=""
