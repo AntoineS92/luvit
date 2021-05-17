@@ -2,24 +2,42 @@
 
   <h1 class="pagetitle">Collections</h1>
 
-  <div class="collectioncard">
-    <a href="/update-collection/:id" class="link"><img
-        class="icon"
-        src="images/edit.svg"
+  <div class="collection">
+
+    {{#each collection}}
+      <div class="collectioncard">
+        <a href="/update-collection/:id" class="link"><img
+            class="icon"
+            src="images/edit.svg"
+            alt=""
+          /></a>
+        <a href="/delete/:id" class="link"><img
+            class="icon"
+            src="images/trash.svg"
+            alt=""
+          /></a>
+
+        <div class="purpleborder">
+            <a href="/collection/:id">
+          <img src="{{this.image}}" alt=""/></a>
+          {{! <a href="/collection/:id"><img
+        src="images/button.svg"
         alt=""
-      /></a>
-    <a href="/delete/:id" class="link"><img
-        class="icon"
-        src="images/trash.svg"
-        alt=""
-      /></a>
-    <div class="purpleborder">
-      {{#each collection}}
-      <img src="{{this.image}}" alt="">
-        
-        <p class="purplefat">{{this.name}}</p>
-        <p class="whitetext">{{this.description}}</p>
-      {{/each}}
+      /></a> }}
+          <p class="purplefat">{{this.name}}</p>
+          <p class="whitetext">{{this.description}}</p>
+        </div>
+
+      </div>
+    {{/each}}
+
+    <div class="addcollection purpleborder">
+      <div><a href="/collection/add-collection">
+        <img src="images/plus.svg" alt="" />
+      </a></div>
+
     </div>
+
   </div>
+
 </body>

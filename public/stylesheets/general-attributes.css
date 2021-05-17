@@ -1,17 +1,40 @@
-.purpleborder{
-    border: 1px solid #6A52F0;
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.whitetext{
-color: white;
-font-size: 12px;
-}
-
-.purplefat{
-font-weight: bold;
-font-size: 18px;
-line-height: 40px;
-color: #6A52F0;
+.pagetitle{
+    z-index: -1;
+    position: absolute; 
+    /* left: -22%; */
+    /* top: 40%; */
+    
+    
+    color: rgba(255, 235, 205, 0);
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 40px;
+    
+    -webkit-text-stroke: 2px  #6A52F0;
+    transform: rotate(90deg);
     }
+
+    
+.purpleborder {
+  /* position: relative; */
+  border: 1px solid #6a52f0;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.whitetext {
+  color: white;
+  font-size: 12px;
+}
+
+.purplefat {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
+  color: #6a52f0;
+}
+
+p {
+  width: fit-content;
+  margin: 0;
+}
