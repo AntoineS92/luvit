@@ -28,7 +28,7 @@ router.get("/update-collection/:id", (req, res, next) => {
   CollectionModel.findById(req.params.id)
     .populate("card")
     .then((result) =>
-      res.render("collection/update-collection", { updateCollection: result })
+      res.render("collection/update-collection", { collection: result })
     )
     .catch(next);
 });
@@ -59,8 +59,12 @@ router.post("/add-collection", uploader.single("image"), (req, res, next) => {
     .catch(next);
 });
 //POST Update
-router.post("/update/:id", (req, res, next) => {
-  CollectionModel.findByIdAndUpdate(req.params.id, req.body)
+router.post("/update/:id", uploader.single("image"), (req, res, next) => {
+  const editedCollection = { ...req.body };
+  if (!req.file) editedCollection.image = undefined;
+  else editedCollection.image = req.file.path;
+
+  CollectionModel.findByIdAndUpdate(req.params.id, editedCollection)
     .then(() => res.redirect("/collection"))
     .catch(next);
 });
