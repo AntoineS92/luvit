@@ -1,14 +1,24 @@
 <body class="body">
 
-<h1 class="pagetitle">Collections</h1>
+  <h1 class="pagetitle">Collections</h1>
 
-<div id="collectioncard">
-<a href="/collection" class="link"><img class="icon" src="images/edit.svg" alt=""></a> 
-<a href="/delete" class="link"><img class="icon" src="images/trash.svg" alt=""></a>
-
-{{#each collection}}
-<p style="color: white;">{{this.name}}</p>
-{{/each}}
-
-</div>
+  <div class="collectioncard">
+    <a href="/update-collection/:id" class="link"><img
+        class="icon"
+        src="images/edit.svg"
+        alt=""
+      /></a>
+    <a href="/delete/:id" class="link"><img
+        class="icon"
+        src="images/trash.svg"
+        alt=""
+      /></a>
+    <div class="purpleborder">
+      {{#each collection}}
+        <a href="{{this.image}}"></a>
+        <p class="purplefat">{{this.name}}</p>
+        <p class="whitetext">{{this.description}}</p>
+      {{/each}}
+    </div>
+  </div>
 </body>

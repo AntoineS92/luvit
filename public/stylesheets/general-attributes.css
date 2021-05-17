@@ -1,0 +1,17 @@
+.purpleborder{
+    border: 1px solid #6A52F0;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.whitetext{
+color: white;
+font-size: 12px;
+}
+
+.purplefat{
+font-weight: bold;
+font-size: 18px;
+line-height: 40px;
+color: #6A52F0;
+    }
