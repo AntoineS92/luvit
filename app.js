@@ -31,7 +31,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/collection", collectionRouter);
-app.use("/card", cardRouter)
+app.use("/collection/card", cardRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
