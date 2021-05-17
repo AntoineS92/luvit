@@ -37,7 +37,7 @@ router.get("/update-collection/:id", (req, res, next) => {
 router.get("/collection/:id", (req, res, next) => {
   CollectionModel.findById(req.params.id)
     .then((result) =>
-      res.render("collection/Onecollection", { OneCollectionDetail: result })
+      res.render("collection/collection-details", { OneCollectionDetail: result })
     )
     .catch(next);
 });
