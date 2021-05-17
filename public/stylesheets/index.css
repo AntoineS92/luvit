@@ -1,0 +1,13 @@
+/* ========= GENERAL RULES ========= */
+
+@import url("./style.css");
+@import url("./background.css");
+@import url("./navbar.css");
+
+/* ======== CSS COLLECTIONS ======== */
+@import url("./add-collection.css");
+
+
+/* ========= CSS CARDS ============= */
+
+/* ========= CSS USER PAGE ========= */

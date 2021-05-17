@@ -5,7 +5,7 @@ const CardModel = require("../models/model.card");
 //GET all cards in one collection
 router.get("/", (req, res, next) => {
   CardModel.find()
-    .then((result) => res.render("card", { card: result }))
+    .then((result) => res.render("card/card", { card: result }))
     .catch(next);
 });
 //GET One card
