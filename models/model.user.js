@@ -6,7 +6,6 @@ const UserSchema = new Schema(
     firstName: String,
     lastName: String,
     email: String,
-    collections: { type: Schema.Types.ObjectId, ref: "collection" },
     password: {
       type: String,
       required: true,
