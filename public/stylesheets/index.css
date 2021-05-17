@@ -3,6 +3,7 @@
 @import url("./style.css");
 @import url("./background.css");
 @import url("./navbar.css");
+@import url("./general-attributes.css");
 
 /* ======== CSS COLLECTIONS ======== */
 @import url("./add-collection.css");
