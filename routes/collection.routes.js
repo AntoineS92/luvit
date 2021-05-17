@@ -9,7 +9,7 @@ const CardModel = require("../models/model.card");
 router.get("/", (req, res, next) => {
   CollectionModel.find()
     .populate("card")
-    .then((result) => res.render("collection", { collection: result }))
+    .then((result) => res.render("collection/collection", { collection: result }))
     .catch(next);
 });
 
