@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const CollectionModel = require("../models/model.collection");
 const CardModel = require("../models/model.card");
+const uploader = require("./../config/cloudinary");
 
 //CRUD
 
@@ -48,8 +49,12 @@ router.get("/delete/:id", (req, res, next) => {
     .catch(next);
 });
 //POST CREATE
-router.post("/create", (req, res, next) => {
-  CollectionModel.create(req.body)
+router.post("/add-collection", uploader.single("image"), (req, res, next) => {
+  const newAlbum = { ...req.body };
+  if (!req.file) newAlbum.image = undefined;
+  else newAlbum.image = req.file.path;
+
+  CollectionModel.create(newAlbum)
     .then(() => res.redirect("/collection"))
     .catch(next);
 });
