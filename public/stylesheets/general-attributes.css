@@ -37,3 +37,7 @@ p {
   width: fit-content;
   margin: 0;
 }
+
+.shadow{
+  box-shadow: 0px 4px 30px rgba(106, 82, 240, 0.22);
+}
