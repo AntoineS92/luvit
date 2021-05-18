@@ -21,6 +21,9 @@ justify-content: flex-end;
 margin-bottom: 10px;
 }
 
+.transp{
+ visibility: hidden;}
+
 .suppmodif img{
  width: 18px;
 }

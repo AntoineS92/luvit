@@ -1,11 +1,14 @@
 <body class="body">
 
   <h1 class="pagetitle pgcard">Cards</h1>
+  
   <div>
+      
     {{#each collection}}
       <p>{{this.name}}</p>
     {{/each}}
     <div class="collection-maincontainer purpleborder">
+        <a class="white" href="javascript:history.back()"> < Collections </a>
     </div>
   </div>
 
