@@ -1,5 +1,12 @@
 <body class="body">
 
-<h1 class="pagetitle pgcard">Cards</h1>
+  <h1 class="pagetitle pgcard">Cards</h1>
+  <div>
+    {{#each collection}}
+      <p>{{this.name}}</p>
+    {{/each}}
+    <div class="collection-maincontainer purpleborder">
+    </div>
+  </div>
 
 </body>
